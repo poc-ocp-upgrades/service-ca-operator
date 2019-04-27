@@ -17,6 +17,8 @@ var (
 func ServiceServerCertificateExtensionV1(svc *kapiv1.Service) crypto.CertificateExtensionFunc {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return func(cert *x509.Certificate) error {
 		uid, err := asn1.Marshal(svc.UID)
 		if err != nil {

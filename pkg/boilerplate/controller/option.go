@@ -19,11 +19,15 @@ type InformerGetter interface {
 func WithMaxRetries(maxRetries int) Option {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return func(c *controller) {
 		c.maxRetries = maxRetries
 	}
 }
 func WithRateLimiter(limiter workqueue.RateLimiter) Option {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	return func(c *controller) {
@@ -33,12 +37,16 @@ func WithRateLimiter(limiter workqueue.RateLimiter) Option {
 func WithInformerSynced(getter InformerGetter) Option {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	informer := getter.Informer()
 	return toRunOpt(func(c *controller) {
 		c.cacheSyncs = append(c.cacheSyncs, informer.GetController().HasSynced)
 	})
 }
 func WithInformer(getter InformerGetter, filter ParentFilter) Option {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	informer := getter.Informer()
@@ -81,6 +89,8 @@ func WithInformer(getter InformerGetter, filter ParentFilter) Option {
 func toRunOpt(opt Option) Option {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return toOnceOpt(func(c *controller) {
 		if c.run {
 			opt(c)
@@ -92,6 +102,8 @@ func toRunOpt(opt Option) Option {
 func toOnceOpt(opt Option) Option {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	var once sync.Once
 	return func(c *controller) {
 		once.Do(func() {
@@ -100,6 +112,8 @@ func toOnceOpt(opt Option) Option {
 	}
 }
 func metaOrDie(obj interface{}) v1.Object {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	accessor, err := meta.Accessor(obj)

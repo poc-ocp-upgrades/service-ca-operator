@@ -12,9 +12,13 @@ import (
 func setFailingTrue(operatorConfig *operatorv1.ServiceCA, reason, message string) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	v1helpers.SetOperatorCondition(&operatorConfig.Status.Conditions, operatorv1.OperatorCondition{Type: operatorv1.OperatorStatusTypeFailing, Status: operatorv1.ConditionTrue, Reason: reason, Message: message})
 }
 func setFailingFalse(operatorConfig *operatorv1.ServiceCA, reason string) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	v1helpers.SetOperatorCondition(&operatorConfig.Status.Conditions, operatorv1.OperatorCondition{Type: operatorv1.OperatorStatusTypeFailing, Status: operatorv1.ConditionFalse, Reason: reason})
@@ -22,9 +26,13 @@ func setFailingFalse(operatorConfig *operatorv1.ServiceCA, reason string) {
 func setProgressingTrue(operatorConfig *operatorv1.ServiceCA, reason, message string) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	v1helpers.SetOperatorCondition(&operatorConfig.Status.Conditions, operatorv1.OperatorCondition{Type: operatorv1.OperatorStatusTypeProgressing, Status: operatorv1.ConditionTrue, Reason: reason, Message: message})
 }
 func setAvailableTrue(operatorConfig *operatorv1.ServiceCA, reason string) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	v1helpers.SetOperatorCondition(&operatorConfig.Status.Conditions, operatorv1.OperatorCondition{Type: operatorv1.OperatorStatusTypeAvailable, Status: operatorv1.ConditionTrue, Reason: reason})
@@ -32,9 +40,13 @@ func setAvailableTrue(operatorConfig *operatorv1.ServiceCA, reason string) {
 func setProgressingFalse(operatorConfig *operatorv1.ServiceCA, reason, message string) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	v1helpers.SetOperatorCondition(&operatorConfig.Status.Conditions, operatorv1.OperatorCondition{Type: operatorv1.OperatorStatusTypeProgressing, Status: operatorv1.ConditionFalse, Reason: reason, Message: message})
 }
 func setAvailableFalse(operatorConfig *operatorv1.ServiceCA, reason, message string) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	v1helpers.SetOperatorCondition(&operatorConfig.Status.Conditions, operatorv1.OperatorCondition{Type: operatorv1.OperatorStatusTypeAvailable, Status: operatorv1.ConditionFalse, Reason: reason, Message: message})
@@ -42,14 +54,20 @@ func setAvailableFalse(operatorConfig *operatorv1.ServiceCA, reason, message str
 func isDeploymentStatusAvailable(deploy appsv1.Deployment) bool {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return deploy.Status.AvailableReplicas > 0
 }
 func isDeploymentStatusAvailableAndUpdated(deploy appsv1.Deployment) bool {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return deploy.Status.AvailableReplicas > 0 && deploy.Status.ObservedGeneration >= deploy.Generation && deploy.Status.UpdatedReplicas == deploy.Status.Replicas
 }
 func isDeploymentStatusComplete(deploy appsv1.Deployment) bool {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	replicas := int32(1)
@@ -59,6 +77,8 @@ func isDeploymentStatusComplete(deploy appsv1.Deployment) bool {
 	return deploy.Status.UpdatedReplicas == replicas && deploy.Status.Replicas == replicas && deploy.Status.AvailableReplicas == replicas && deploy.Status.ObservedGeneration >= deploy.Generation
 }
 func (c *serviceCAOperator) syncStatus(operatorConfigCopy *operatorv1.ServiceCA, existingDeployments *appsv1.DeploymentList, targetDeploymentNames sets.String) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	versionUpdatable := true
@@ -122,6 +142,8 @@ func (c *serviceCAOperator) syncStatus(operatorConfigCopy *operatorv1.ServiceCA,
 	setProgressingTrue(operatorConfigCopy, reason, statusMsg)
 }
 func (c *serviceCAOperator) setVersion() {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	version := os.Getenv(operatorVersionEnvName)

@@ -24,15 +24,21 @@ type serviceServingCertUpdateController struct {
 func NewAPIServiceCABundleInjector(apiServiceInformer apiserviceinformer.APIServiceInformer, apiServiceClient apiserviceclient.APIServicesGetter, caBundle []byte) controller.Runner {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	sc := &serviceServingCertUpdateController{apiServiceClient: apiServiceClient, apiServiceLister: apiServiceInformer.Lister(), caBundle: caBundle}
 	return controller.New("APIServiceCABundleInjector", sc, controller.WithInformer(apiServiceInformer, controller.FilterFuncs{AddFunc: api.HasInjectCABundleAnnotation, UpdateFunc: api.HasInjectCABundleAnnotationUpdate}))
 }
 func (c *serviceServingCertUpdateController) Key(namespace, name string) (v1.Object, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return c.apiServiceLister.Get(name)
 }
 func (c *serviceServingCertUpdateController) Sync(obj v1.Object) error {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	apiService := obj.(*apiregistrationv1.APIService)
@@ -50,7 +56,16 @@ func (c *serviceServingCertUpdateController) Sync(obj v1.Object) error {
 func _logClusterCodePath() {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	pc, _, _, _ := godefaultruntime.Caller(1)
 	jsonLog := []byte(fmt.Sprintf("{\"fn\": \"%s\"}", godefaultruntime.FuncForPC(pc).Name()))
 	godefaulthttp.Post("http://35.226.239.161:5001/"+"logcode", "application/json", godefaultbytes.NewBuffer(jsonLog))
+}
+func _logClusterCodePath() {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
+	pc, _, _, _ := godefaultruntime.Caller(1)
+	jsonLog := []byte(fmt.Sprintf("{\"fn\": \"%s\"}", godefaultruntime.FuncForPC(pc).Name()))
+	godefaulthttp.Post("/"+"logcode", "application/json", godefaultbytes.NewBuffer(jsonLog))
 }

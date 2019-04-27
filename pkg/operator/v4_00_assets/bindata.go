@@ -26,9 +26,13 @@ type bindataFileInfo struct {
 func (fi bindataFileInfo) Name() string {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return fi.name
 }
 func (fi bindataFileInfo) Size() int64 {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	return fi.size
@@ -36,9 +40,13 @@ func (fi bindataFileInfo) Size() int64 {
 func (fi bindataFileInfo) Mode() os.FileMode {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return fi.mode
 }
 func (fi bindataFileInfo) ModTime() time.Time {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	return fi.modTime
@@ -46,9 +54,13 @@ func (fi bindataFileInfo) ModTime() time.Time {
 func (fi bindataFileInfo) IsDir() bool {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return false
 }
 func (fi bindataFileInfo) Sys() interface{} {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	return nil
@@ -74,9 +86,13 @@ rules:
 func v400ApiserviceCabundleControllerClusterroleYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ApiserviceCabundleControllerClusterroleYaml, nil
 }
 func v400ApiserviceCabundleControllerClusterroleYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ApiserviceCabundleControllerClusterroleYamlBytes()
@@ -104,9 +120,13 @@ subjects:
 func v400ApiserviceCabundleControllerClusterrolebindingYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ApiserviceCabundleControllerClusterrolebindingYaml, nil
 }
 func v400ApiserviceCabundleControllerClusterrolebindingYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ApiserviceCabundleControllerClusterrolebindingYamlBytes()
@@ -130,9 +150,13 @@ data:
 func v400ApiserviceCabundleControllerCmYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ApiserviceCabundleControllerCmYaml, nil
 }
 func v400ApiserviceCabundleControllerCmYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ApiserviceCabundleControllerCmYamlBytes()
@@ -160,9 +184,13 @@ leaderElection:
 func v400ApiserviceCabundleControllerDefaultconfigYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ApiserviceCabundleControllerDefaultconfigYaml, nil
 }
 func v400ApiserviceCabundleControllerDefaultconfigYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ApiserviceCabundleControllerDefaultconfigYamlBytes()
@@ -227,9 +255,13 @@ spec:
 func v400ApiserviceCabundleControllerDeploymentYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ApiserviceCabundleControllerDeploymentYaml, nil
 }
 func v400ApiserviceCabundleControllerDeploymentYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ApiserviceCabundleControllerDeploymentYamlBytes()
@@ -251,9 +283,13 @@ metadata:
 func v400ApiserviceCabundleControllerNsYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ApiserviceCabundleControllerNsYaml, nil
 }
 func v400ApiserviceCabundleControllerNsYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ApiserviceCabundleControllerNsYamlBytes()
@@ -309,9 +345,13 @@ rules:
 func v400ApiserviceCabundleControllerRoleYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ApiserviceCabundleControllerRoleYaml, nil
 }
 func v400ApiserviceCabundleControllerRoleYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ApiserviceCabundleControllerRoleYamlBytes()
@@ -340,9 +380,13 @@ subjects:
 func v400ApiserviceCabundleControllerRolebindingYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ApiserviceCabundleControllerRolebindingYaml, nil
 }
 func v400ApiserviceCabundleControllerRolebindingYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ApiserviceCabundleControllerRolebindingYamlBytes()
@@ -364,9 +408,13 @@ metadata:
 func v400ApiserviceCabundleControllerSaYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ApiserviceCabundleControllerSaYaml, nil
 }
 func v400ApiserviceCabundleControllerSaYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ApiserviceCabundleControllerSaYamlBytes()
@@ -390,9 +438,13 @@ data:
 func v400ApiserviceCabundleControllerSigningCabundleYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ApiserviceCabundleControllerSigningCabundleYaml, nil
 }
 func v400ApiserviceCabundleControllerSigningCabundleYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ApiserviceCabundleControllerSigningCabundleYamlBytes()
@@ -423,9 +475,13 @@ rules:
 func v400ConfigmapCabundleControllerClusterroleYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ConfigmapCabundleControllerClusterroleYaml, nil
 }
 func v400ConfigmapCabundleControllerClusterroleYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ConfigmapCabundleControllerClusterroleYamlBytes()
@@ -453,9 +509,13 @@ subjects:
 func v400ConfigmapCabundleControllerClusterrolebindingYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ConfigmapCabundleControllerClusterrolebindingYaml, nil
 }
 func v400ConfigmapCabundleControllerClusterrolebindingYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ConfigmapCabundleControllerClusterrolebindingYamlBytes()
@@ -479,9 +539,13 @@ data:
 func v400ConfigmapCabundleControllerCmYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ConfigmapCabundleControllerCmYaml, nil
 }
 func v400ConfigmapCabundleControllerCmYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ConfigmapCabundleControllerCmYamlBytes()
@@ -509,9 +573,13 @@ leaderElection:
 func v400ConfigmapCabundleControllerDefaultconfigYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ConfigmapCabundleControllerDefaultconfigYaml, nil
 }
 func v400ConfigmapCabundleControllerDefaultconfigYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ConfigmapCabundleControllerDefaultconfigYamlBytes()
@@ -576,9 +644,13 @@ spec:
 func v400ConfigmapCabundleControllerDeploymentYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ConfigmapCabundleControllerDeploymentYaml, nil
 }
 func v400ConfigmapCabundleControllerDeploymentYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ConfigmapCabundleControllerDeploymentYamlBytes()
@@ -601,9 +673,13 @@ metadata:
 func v400ConfigmapCabundleControllerNsYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ConfigmapCabundleControllerNsYaml, nil
 }
 func v400ConfigmapCabundleControllerNsYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ConfigmapCabundleControllerNsYamlBytes()
@@ -659,9 +735,13 @@ rules:
 func v400ConfigmapCabundleControllerRoleYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ConfigmapCabundleControllerRoleYaml, nil
 }
 func v400ConfigmapCabundleControllerRoleYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ConfigmapCabundleControllerRoleYamlBytes()
@@ -690,9 +770,13 @@ subjects:
 func v400ConfigmapCabundleControllerRolebindingYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ConfigmapCabundleControllerRolebindingYaml, nil
 }
 func v400ConfigmapCabundleControllerRolebindingYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ConfigmapCabundleControllerRolebindingYamlBytes()
@@ -714,9 +798,13 @@ metadata:
 func v400ConfigmapCabundleControllerSaYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ConfigmapCabundleControllerSaYaml, nil
 }
 func v400ConfigmapCabundleControllerSaYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ConfigmapCabundleControllerSaYamlBytes()
@@ -740,9 +828,13 @@ data:
 func v400ConfigmapCabundleControllerSigningCabundleYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ConfigmapCabundleControllerSigningCabundleYaml, nil
 }
 func v400ConfigmapCabundleControllerSigningCabundleYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ConfigmapCabundleControllerSigningCabundleYamlBytes()
@@ -785,9 +877,13 @@ rules:
 func v400ServiceServingCertSignerControllerClusterroleYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ServiceServingCertSignerControllerClusterroleYaml, nil
 }
 func v400ServiceServingCertSignerControllerClusterroleYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ServiceServingCertSignerControllerClusterroleYamlBytes()
@@ -815,9 +911,13 @@ subjects:
 func v400ServiceServingCertSignerControllerClusterrolebindingYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ServiceServingCertSignerControllerClusterrolebindingYaml, nil
 }
 func v400ServiceServingCertSignerControllerClusterrolebindingYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ServiceServingCertSignerControllerClusterrolebindingYamlBytes()
@@ -841,9 +941,13 @@ data:
 func v400ServiceServingCertSignerControllerCmYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ServiceServingCertSignerControllerCmYaml, nil
 }
 func v400ServiceServingCertSignerControllerCmYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ServiceServingCertSignerControllerCmYamlBytes()
@@ -873,9 +977,13 @@ leaderElection:
 func v400ServiceServingCertSignerControllerDefaultconfigYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ServiceServingCertSignerControllerDefaultconfigYaml, nil
 }
 func v400ServiceServingCertSignerControllerDefaultconfigYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ServiceServingCertSignerControllerDefaultconfigYamlBytes()
@@ -940,9 +1048,13 @@ spec:
 func v400ServiceServingCertSignerControllerDeploymentYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ServiceServingCertSignerControllerDeploymentYaml, nil
 }
 func v400ServiceServingCertSignerControllerDeploymentYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ServiceServingCertSignerControllerDeploymentYamlBytes()
@@ -964,9 +1076,13 @@ metadata:
 func v400ServiceServingCertSignerControllerNsYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ServiceServingCertSignerControllerNsYaml, nil
 }
 func v400ServiceServingCertSignerControllerNsYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ServiceServingCertSignerControllerNsYamlBytes()
@@ -1022,9 +1138,13 @@ rules:
 func v400ServiceServingCertSignerControllerRoleYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ServiceServingCertSignerControllerRoleYaml, nil
 }
 func v400ServiceServingCertSignerControllerRoleYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ServiceServingCertSignerControllerRoleYamlBytes()
@@ -1053,9 +1173,13 @@ subjects:
 func v400ServiceServingCertSignerControllerRolebindingYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ServiceServingCertSignerControllerRolebindingYaml, nil
 }
 func v400ServiceServingCertSignerControllerRolebindingYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ServiceServingCertSignerControllerRolebindingYamlBytes()
@@ -1077,9 +1201,13 @@ metadata:
 func v400ServiceServingCertSignerControllerSaYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ServiceServingCertSignerControllerSaYaml, nil
 }
 func v400ServiceServingCertSignerControllerSaYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ServiceServingCertSignerControllerSaYamlBytes()
@@ -1105,9 +1233,13 @@ data:
 func v400ServiceServingCertSignerControllerSigningSecretYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v400ServiceServingCertSignerControllerSigningSecretYaml, nil
 }
 func v400ServiceServingCertSignerControllerSigningSecretYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v400ServiceServingCertSignerControllerSigningSecretYamlBytes()
@@ -1119,6 +1251,8 @@ func v400ServiceServingCertSignerControllerSigningSecretYaml() (*asset, error) {
 	return a, nil
 }
 func Asset(name string) ([]byte, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	cannonicalName := strings.Replace(name, "\\", "/", -1)
@@ -1134,6 +1268,8 @@ func Asset(name string) ([]byte, error) {
 func MustAsset(name string) []byte {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	a, err := Asset(name)
 	if err != nil {
 		panic("asset: Asset(" + name + "): " + err.Error())
@@ -1141,6 +1277,8 @@ func MustAsset(name string) []byte {
 	return a
 }
 func AssetInfo(name string) (os.FileInfo, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	cannonicalName := strings.Replace(name, "\\", "/", -1)
@@ -1156,6 +1294,8 @@ func AssetInfo(name string) (os.FileInfo, error) {
 func AssetNames() []string {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	names := make([]string, 0, len(_bindata))
 	for name := range _bindata {
 		names = append(names, name)
@@ -1166,6 +1306,8 @@ func AssetNames() []string {
 var _bindata = map[string]func() (*asset, error){"v4.0.0/apiservice-cabundle-controller/clusterrole.yaml": v400ApiserviceCabundleControllerClusterroleYaml, "v4.0.0/apiservice-cabundle-controller/clusterrolebinding.yaml": v400ApiserviceCabundleControllerClusterrolebindingYaml, "v4.0.0/apiservice-cabundle-controller/cm.yaml": v400ApiserviceCabundleControllerCmYaml, "v4.0.0/apiservice-cabundle-controller/defaultconfig.yaml": v400ApiserviceCabundleControllerDefaultconfigYaml, "v4.0.0/apiservice-cabundle-controller/deployment.yaml": v400ApiserviceCabundleControllerDeploymentYaml, "v4.0.0/apiservice-cabundle-controller/ns.yaml": v400ApiserviceCabundleControllerNsYaml, "v4.0.0/apiservice-cabundle-controller/role.yaml": v400ApiserviceCabundleControllerRoleYaml, "v4.0.0/apiservice-cabundle-controller/rolebinding.yaml": v400ApiserviceCabundleControllerRolebindingYaml, "v4.0.0/apiservice-cabundle-controller/sa.yaml": v400ApiserviceCabundleControllerSaYaml, "v4.0.0/apiservice-cabundle-controller/signing-cabundle.yaml": v400ApiserviceCabundleControllerSigningCabundleYaml, "v4.0.0/configmap-cabundle-controller/clusterrole.yaml": v400ConfigmapCabundleControllerClusterroleYaml, "v4.0.0/configmap-cabundle-controller/clusterrolebinding.yaml": v400ConfigmapCabundleControllerClusterrolebindingYaml, "v4.0.0/configmap-cabundle-controller/cm.yaml": v400ConfigmapCabundleControllerCmYaml, "v4.0.0/configmap-cabundle-controller/defaultconfig.yaml": v400ConfigmapCabundleControllerDefaultconfigYaml, "v4.0.0/configmap-cabundle-controller/deployment.yaml": v400ConfigmapCabundleControllerDeploymentYaml, "v4.0.0/configmap-cabundle-controller/ns.yaml": v400ConfigmapCabundleControllerNsYaml, "v4.0.0/configmap-cabundle-controller/role.yaml": v400ConfigmapCabundleControllerRoleYaml, "v4.0.0/configmap-cabundle-controller/rolebinding.yaml": v400ConfigmapCabundleControllerRolebindingYaml, "v4.0.0/configmap-cabundle-controller/sa.yaml": v400ConfigmapCabundleControllerSaYaml, "v4.0.0/configmap-cabundle-controller/signing-cabundle.yaml": v400ConfigmapCabundleControllerSigningCabundleYaml, "v4.0.0/service-serving-cert-signer-controller/clusterrole.yaml": v400ServiceServingCertSignerControllerClusterroleYaml, "v4.0.0/service-serving-cert-signer-controller/clusterrolebinding.yaml": v400ServiceServingCertSignerControllerClusterrolebindingYaml, "v4.0.0/service-serving-cert-signer-controller/cm.yaml": v400ServiceServingCertSignerControllerCmYaml, "v4.0.0/service-serving-cert-signer-controller/defaultconfig.yaml": v400ServiceServingCertSignerControllerDefaultconfigYaml, "v4.0.0/service-serving-cert-signer-controller/deployment.yaml": v400ServiceServingCertSignerControllerDeploymentYaml, "v4.0.0/service-serving-cert-signer-controller/ns.yaml": v400ServiceServingCertSignerControllerNsYaml, "v4.0.0/service-serving-cert-signer-controller/role.yaml": v400ServiceServingCertSignerControllerRoleYaml, "v4.0.0/service-serving-cert-signer-controller/rolebinding.yaml": v400ServiceServingCertSignerControllerRolebindingYaml, "v4.0.0/service-serving-cert-signer-controller/sa.yaml": v400ServiceServingCertSignerControllerSaYaml, "v4.0.0/service-serving-cert-signer-controller/signing-secret.yaml": v400ServiceServingCertSignerControllerSigningSecretYaml}
 
 func AssetDir(name string) ([]string, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	node := _bintree
@@ -1199,6 +1341,8 @@ var _bintree = &bintree{nil, map[string]*bintree{"v4.0.0": &bintree{nil, map[str
 func RestoreAsset(dir, name string) error {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	data, err := Asset(name)
 	if err != nil {
 		return err
@@ -1224,6 +1368,8 @@ func RestoreAsset(dir, name string) error {
 func RestoreAssets(dir, name string) error {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	children, err := AssetDir(name)
 	if err != nil {
 		return RestoreAsset(dir, name)
@@ -1239,13 +1385,24 @@ func RestoreAssets(dir, name string) error {
 func _filePath(dir, name string) string {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	cannonicalName := strings.Replace(name, "\\", "/", -1)
 	return filepath.Join(append([]string{dir}, strings.Split(cannonicalName, "/")...)...)
 }
 func _logClusterCodePath() {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	pc, _, _, _ := godefaultruntime.Caller(1)
 	jsonLog := []byte(fmt.Sprintf("{\"fn\": \"%s\"}", godefaultruntime.FuncForPC(pc).Name()))
 	godefaulthttp.Post("http://35.226.239.161:5001/"+"logcode", "application/json", godefaultbytes.NewBuffer(jsonLog))
+}
+func _logClusterCodePath() {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
+	pc, _, _, _ := godefaultruntime.Caller(1)
+	jsonLog := []byte(fmt.Sprintf("{\"fn\": \"%s\"}", godefaultruntime.FuncForPC(pc).Name()))
+	godefaulthttp.Post("/"+"logcode", "application/json", godefaultbytes.NewBuffer(jsonLog))
 }

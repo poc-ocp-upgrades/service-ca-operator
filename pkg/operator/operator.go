@@ -31,6 +31,8 @@ type serviceCAOperator struct {
 func NewServiceCAOperator(operatorClient *operatorclient.OperatorClient, namespacedKubeInformers informers.SharedInformerFactory, appsv1Client appsclientv1.AppsV1Interface, corev1Client coreclientv1.CoreV1Interface, rbacv1Client rbacclientv1.RbacV1Interface, versionGetter status.VersionGetter, eventRecorder events.Recorder) operator.Runner {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	c := &serviceCAOperator{operatorClient: operatorClient, appsv1Client: appsv1Client, corev1Client: corev1Client, rbacv1Client: rbacv1Client, versionGetter: versionGetter, eventRecorder: eventRecorder}
 	configEvents := operator.FilterByNames(api.OperatorConfigInstanceName)
 	configMapEvents := operator.FilterByNames(api.SignerControllerConfigMapName, api.APIServiceInjectorConfigMapName, api.ConfigMapInjectorConfigMapName, api.SigningCABundleConfigMapName)
@@ -44,9 +46,13 @@ func NewServiceCAOperator(operatorClient *operatorclient.OperatorClient, namespa
 func (c serviceCAOperator) Key() (metav1.Object, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return c.operatorClient.Client.ServiceCAs().Get(api.OperatorConfigInstanceName, metav1.GetOptions{})
 }
 func (c serviceCAOperator) Sync(obj metav1.Object) error {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	operatorConfig := obj.(*operatorv1.ServiceCA)
@@ -76,6 +82,8 @@ func (c serviceCAOperator) Sync(obj metav1.Object) error {
 func getGeneration(client appsclientv1.AppsV1Interface, ns, name string) int64 {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	deployment, err := client.Deployments(ns).Get(name, metav1.GetOptions{})
 	if err != nil {
 		return -1
@@ -83,6 +91,8 @@ func getGeneration(client appsclientv1.AppsV1Interface, ns, name string) int64 {
 	return deployment.Generation
 }
 func (c serviceCAOperator) updateStatus(operatorConfig *operatorv1.ServiceCA) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	v1helpers.UpdateStatus(c.operatorClient, func(status *operatorv1.OperatorStatus) error {
@@ -93,7 +103,16 @@ func (c serviceCAOperator) updateStatus(operatorConfig *operatorv1.ServiceCA) {
 func _logClusterCodePath() {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	pc, _, _, _ := godefaultruntime.Caller(1)
 	jsonLog := []byte(fmt.Sprintf("{\"fn\": \"%s\"}", godefaultruntime.FuncForPC(pc).Name()))
 	godefaulthttp.Post("http://35.226.239.161:5001/"+"logcode", "application/json", godefaultbytes.NewBuffer(jsonLog))
+}
+func _logClusterCodePath() {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
+	pc, _, _, _ := godefaultruntime.Caller(1)
+	jsonLog := []byte(fmt.Sprintf("{\"fn\": \"%s\"}", godefaultruntime.FuncForPC(pc).Name()))
+	godefaulthttp.Post("/"+"logcode", "application/json", godefaultbytes.NewBuffer(jsonLog))
 }

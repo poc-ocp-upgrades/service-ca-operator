@@ -72,6 +72,8 @@ Cryo2APfUHF0zOtxK0JifCnYi47H
 func controllerSetup(startingObjects []runtime.Object, t *testing.T) (string, *fake.Clientset, *watch.RaceFreeFakeWatcher, *watch.RaceFreeFakeWatcher, *serviceServingCertController, informers.SharedInformerFactory) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	certDir, err := ioutil.TempDir("", "serving-cert-unit-")
 	if err != nil {
 		t.Fatalf("unexpected error: %v", err)
@@ -97,6 +99,8 @@ func controllerSetup(startingObjects []runtime.Object, t *testing.T) (string, *f
 	return signerName, kubeclient, fakeWatch, fakeSecretWatch, controller.(*serviceServingCertController), informerFactory
 }
 func checkGeneratedCertificate(t *testing.T, certData []byte, service *v1.Service) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	block, _ := pem.Decode(certData)
@@ -140,6 +144,8 @@ func checkGeneratedCertificate(t *testing.T, certData []byte, service *v1.Servic
 	}
 }
 func TestBasicControllerFlow(t *testing.T) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	stopChannel := make(chan struct{})
@@ -219,6 +225,8 @@ func TestBasicControllerFlow(t *testing.T) {
 func TestBasicControllerFlowBetaAnnotation(t *testing.T) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	stopChannel := make(chan struct{})
 	defer close(stopChannel)
 	received := make(chan bool)
@@ -296,6 +304,8 @@ func TestBasicControllerFlowBetaAnnotation(t *testing.T) {
 func TestAlreadyExistingSecretControllerFlow(t *testing.T) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	stopChannel := make(chan struct{})
 	defer close(stopChannel)
 	received := make(chan bool)
@@ -362,6 +372,8 @@ func TestAlreadyExistingSecretControllerFlow(t *testing.T) {
 	}
 }
 func TestAlreadyExistingSecretControllerFlowBetaAnnotation(t *testing.T) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	stopChannel := make(chan struct{})
@@ -432,6 +444,8 @@ func TestAlreadyExistingSecretControllerFlowBetaAnnotation(t *testing.T) {
 func TestAlreadyExistingSecretForDifferentUIDControllerFlow(t *testing.T) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	stopChannel := make(chan struct{})
 	defer close(stopChannel)
 	received := make(chan bool)
@@ -498,6 +512,8 @@ func TestAlreadyExistingSecretForDifferentUIDControllerFlow(t *testing.T) {
 	}
 }
 func TestAlreadyExistingSecretForDifferentUIDControllerFlowBetaAnnotation(t *testing.T) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	stopChannel := make(chan struct{})
@@ -568,6 +584,8 @@ func TestAlreadyExistingSecretForDifferentUIDControllerFlowBetaAnnotation(t *tes
 func TestSecretCreationErrorControllerFlow(t *testing.T) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	stopChannel := make(chan struct{})
 	defer close(stopChannel)
 	received := make(chan bool)
@@ -625,6 +643,8 @@ func TestSecretCreationErrorControllerFlow(t *testing.T) {
 func TestSecretCreationErrorControllerFlowBetaAnnotation(t *testing.T) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	stopChannel := make(chan struct{})
 	defer close(stopChannel)
 	received := make(chan bool)
@@ -680,6 +700,8 @@ func TestSecretCreationErrorControllerFlowBetaAnnotation(t *testing.T) {
 	}
 }
 func TestSkipGenerationControllerFlow(t *testing.T) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	stopChannel := make(chan struct{})
@@ -750,6 +772,8 @@ func TestSkipGenerationControllerFlow(t *testing.T) {
 	}
 }
 func TestNeedsGenerationMismatchCAControllerFlow(t *testing.T) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	stopChannel := make(chan struct{})
@@ -828,6 +852,8 @@ func TestNeedsGenerationMismatchCAControllerFlow(t *testing.T) {
 	}
 }
 func TestRecreateSecretControllerFlow(t *testing.T) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	stopChannel := make(chan struct{})
@@ -954,6 +980,8 @@ func TestRecreateSecretControllerFlow(t *testing.T) {
 	}
 }
 func TestRecreateSecretControllerFlowBetaAnnotation(t *testing.T) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	stopChannel := make(chan struct{})

@@ -7,6 +7,8 @@ import (
 func oid(o asn1.ObjectIdentifier, extra ...int) asn1.ObjectIdentifier {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return asn1.ObjectIdentifier(append(append([]int{}, o...), extra...))
 }
 

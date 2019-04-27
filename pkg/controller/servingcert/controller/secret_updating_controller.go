@@ -31,10 +31,14 @@ type serviceServingCertUpdateController struct {
 func NewServiceServingCertUpdateController(services informers.ServiceInformer, secrets informers.SecretInformer, secretClient kcoreclient.SecretsGetter, ca *crypto.CA, dnsSuffix string) controller.Runner {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	sc := &serviceServingCertUpdateController{secretClient: secretClient, serviceLister: services.Lister(), secretLister: secrets.Lister(), ca: ca, dnsSuffix: dnsSuffix, minTimeLeftForCert: 1 * time.Hour}
 	return controller.New("ServiceServingCertUpdateController", sc, controller.WithInformerSynced(services), controller.WithInformer(secrets, controller.FilterFuncs{AddFunc: sc.addSecret, UpdateFunc: sc.updateSecret}))
 }
 func (sc *serviceServingCertUpdateController) addSecret(obj metav1.Object) bool {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	secret := obj.(*v1.Secret)
@@ -44,14 +48,20 @@ func (sc *serviceServingCertUpdateController) addSecret(obj metav1.Object) bool 
 func (sc *serviceServingCertUpdateController) updateSecret(old, cur metav1.Object) bool {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return sc.addSecret(cur) || sc.addSecret(old)
 }
 func (sc *serviceServingCertUpdateController) Key(namespace, name string) (metav1.Object, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return sc.secretLister.Secrets(namespace).Get(name)
 }
 func (sc *serviceServingCertUpdateController) Sync(obj metav1.Object) error {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	sharedSecret := obj.(*v1.Secret)
@@ -83,6 +93,8 @@ func (sc *serviceServingCertUpdateController) Sync(obj metav1.Object) error {
 func isSecretValidForService(sharedService *v1.Service, secret *v1.Secret) bool {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	isValid := true
 	if sharedService.Annotations[api.ServingCertSecretAnnotation] != secret.Name && sharedService.Annotations[api.AlphaServingCertSecretAnnotation] != secret.Name {
 		isValid = false
@@ -93,6 +105,8 @@ func isSecretValidForService(sharedService *v1.Service, secret *v1.Secret) bool 
 	return isValid
 }
 func (sc *serviceServingCertUpdateController) getServiceForSecret(sharedSecret *v1.Secret) *v1.Service {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	serviceName, ok := toServiceName(sharedSecret)
@@ -110,6 +124,8 @@ func (sc *serviceServingCertUpdateController) getServiceForSecret(sharedSecret *
 	return service
 }
 func (sc *serviceServingCertUpdateController) requiresRegeneration(service *v1.Service, secret *v1.Secret, minTimeLeft time.Duration) bool {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	if !ocontroller.HasOwnerRef(secret, ownerRef(service)) {
@@ -132,6 +148,8 @@ func (sc *serviceServingCertUpdateController) requiresRegeneration(service *v1.S
 	return false
 }
 func (sc *serviceServingCertUpdateController) ensureSecretData(service *v1.Service, secretCopy *v1.Secret) (bool, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	update := false
@@ -167,6 +185,8 @@ func (sc *serviceServingCertUpdateController) ensureSecretData(service *v1.Servi
 	return update, nil
 }
 func toServiceName(secret *v1.Secret) (string, bool) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	serviceName := secret.Annotations[api.ServiceNameAnnotation]

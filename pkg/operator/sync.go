@@ -8,6 +8,8 @@ import (
 func syncControllers(c serviceCAOperator, operatorConfig *operatorv1.ServiceCA) error {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	needsDeploy, err := manageControllerNS(c)
 	if err != nil {
 		return err

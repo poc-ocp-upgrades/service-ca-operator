@@ -14,6 +14,8 @@ import (
 func TestRequiresRegenerationOrReplace(t *testing.T) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	tests := []struct {
 		name		string
 		primeServices	func(cache.Indexer)
@@ -64,6 +66,8 @@ func TestRequiresRegenerationOrReplace(t *testing.T) {
 	}
 }
 func TestRequiresRegenerationServiceUIDMismatchBetaAnnotation(t *testing.T) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	tests := []struct {

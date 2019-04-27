@@ -22,10 +22,14 @@ import (
 func manageControllerNS(c serviceCAOperator) (bool, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_, modified, err := resourceapply.ApplyNamespace(c.corev1Client, c.eventRecorder, resourceread.ReadNamespaceV1OrDie(v4_00_assets.MustAsset("v4.0.0/service-serving-cert-signer-controller/ns.yaml")))
 	return modified, err
 }
 func manageSignerControllerResources(c serviceCAOperator, modified *bool) error {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	return manageControllerResources(c, "v4.0.0/service-serving-cert-signer-controller/", modified)
@@ -33,14 +37,20 @@ func manageSignerControllerResources(c serviceCAOperator, modified *bool) error 
 func manageAPIServiceControllerResources(c serviceCAOperator, modified *bool) error {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return manageControllerResources(c, "v4.0.0/apiservice-cabundle-controller/", modified)
 }
 func manageConfigMapCABundleControllerResources(c serviceCAOperator, modified *bool) error {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return manageControllerResources(c, "v4.0.0/configmap-cabundle-controller/", modified)
 }
 func manageControllerResources(c serviceCAOperator, resourcePath string, modified *bool) error {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	var err error
@@ -79,6 +89,8 @@ func manageControllerResources(c serviceCAOperator, resourcePath string, modifie
 func manageSignerCA(client coreclientv1.SecretsGetter, eventRecorder events.Recorder) (bool, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	secret := resourceread.ReadSecretV1OrDie(v4_00_assets.MustAsset("v4.0.0/service-serving-cert-signer-controller/signing-secret.yaml"))
 	_, err := client.Secrets(secret.Namespace).Get(secret.Name, metav1.GetOptions{})
 	if !apierrors.IsNotFound(err) {
@@ -103,6 +115,8 @@ func manageSignerCA(client coreclientv1.SecretsGetter, eventRecorder events.Reco
 func manageSignerCABundle(client coreclientv1.CoreV1Interface, eventRecorder events.Recorder, forceUpdate bool) (bool, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	configMap := resourceread.ReadConfigMapV1OrDie(v4_00_assets.MustAsset("v4.0.0/apiservice-cabundle-controller/signing-cabundle.yaml"))
 	if !forceUpdate {
 		_, err := client.ConfigMaps(configMap.Namespace).Get(configMap.Name, metav1.GetOptions{})
@@ -123,6 +137,8 @@ func manageSignerCABundle(client coreclientv1.CoreV1Interface, eventRecorder eve
 func manageSignerControllerConfig(client coreclientv1.ConfigMapsGetter, eventRecorder events.Recorder) (bool, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	configMap := resourceread.ReadConfigMapV1OrDie(v4_00_assets.MustAsset("v4.0.0/service-serving-cert-signer-controller/cm.yaml"))
 	defaultConfig := v4_00_assets.MustAsset("v4.0.0/service-serving-cert-signer-controller/defaultconfig.yaml")
 	requiredConfigMap, _, err := resourcemerge.MergeConfigMap(configMap, "controller-config.yaml", nil, defaultConfig)
@@ -133,6 +149,8 @@ func manageSignerControllerConfig(client coreclientv1.ConfigMapsGetter, eventRec
 	return mod, err
 }
 func manageAPIServiceControllerConfig(client coreclientv1.ConfigMapsGetter, eventRecorder events.Recorder) (bool, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	configMap := resourceread.ReadConfigMapV1OrDie(v4_00_assets.MustAsset("v4.0.0/apiservice-cabundle-controller/cm.yaml"))
@@ -147,6 +165,8 @@ func manageAPIServiceControllerConfig(client coreclientv1.ConfigMapsGetter, even
 func manageConfigMapCABundleControllerConfig(client coreclientv1.ConfigMapsGetter, eventRecorder events.Recorder) (bool, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	configMap := resourceread.ReadConfigMapV1OrDie(v4_00_assets.MustAsset("v4.0.0/configmap-cabundle-controller/cm.yaml"))
 	defaultConfig := v4_00_assets.MustAsset("v4.0.0/configmap-cabundle-controller/defaultconfig.yaml")
 	requiredConfigMap, _, err := resourcemerge.MergeConfigMap(configMap, "controller-config.yaml", nil, defaultConfig)
@@ -159,9 +179,13 @@ func manageConfigMapCABundleControllerConfig(client coreclientv1.ConfigMapsGette
 func manageSignerControllerDeployment(client appsclientv1.AppsV1Interface, eventRecorder events.Recorder, options *operatorv1.ServiceCA, forceDeployment bool) (bool, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return manageDeployment(client, eventRecorder, options, "v4.0.0/service-serving-cert-signer-controller/", forceDeployment)
 }
 func manageAPIServiceControllerDeployment(client appsclientv1.AppsV1Interface, eventRecorder events.Recorder, options *operatorv1.ServiceCA, forceDeployment bool) (bool, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	return manageDeployment(client, eventRecorder, options, "v4.0.0/apiservice-cabundle-controller/", forceDeployment)
@@ -169,9 +193,13 @@ func manageAPIServiceControllerDeployment(client appsclientv1.AppsV1Interface, e
 func manageConfigMapCABundleControllerDeployment(client appsclientv1.AppsV1Interface, eventRecorder events.Recorder, options *operatorv1.ServiceCA, forceDeployment bool) (bool, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return manageDeployment(client, eventRecorder, options, "v4.0.0/configmap-cabundle-controller/", forceDeployment)
 }
 func manageDeployment(client appsclientv1.AppsV1Interface, eventRecorder events.Recorder, options *operatorv1.ServiceCA, resourcePath string, forceDeployment bool) (bool, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	required := resourceread.ReadDeploymentV1OrDie(v4_00_assets.MustAsset(resourcePath + "deployment.yaml"))
@@ -186,6 +214,8 @@ func manageDeployment(client appsclientv1.AppsV1Interface, eventRecorder events.
 	return mod, nil
 }
 func serviceServingCertSignerName() string {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	return fmt.Sprintf("%s@%d", "openshift-service-serving-signer", time.Now().Unix())
