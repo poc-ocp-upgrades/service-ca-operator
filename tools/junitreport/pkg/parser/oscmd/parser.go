@@ -6,7 +6,8 @@ import (
 	"github.com/openshift/service-ca-operator/tools/junitreport/pkg/parser/stack"
 )
 
-// NewParser returns a new parser that's capable of parsing `os::cmd` test output
 func NewParser(builder builder.TestSuitesBuilder, stream bool) parser.TestOutputParser {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return stack.NewParser(builder, newTestDataParser(), newTestSuiteDataParser(), stream)
 }
